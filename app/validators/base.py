@@ -24,6 +24,7 @@ class BaseForm(Form):
     def validate_for_api(self):
         valid = super(BaseForm, self).validate()
         if not valid:
+
             # form errors
             raise ParameterException(msg=self.errors)
         return self
